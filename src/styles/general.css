@@ -42,7 +42,3 @@ p:last-child {
 #app {
 	height: 100%;
 }
-
-#app > [data-reactroot] {
-  height: 100%;
-}

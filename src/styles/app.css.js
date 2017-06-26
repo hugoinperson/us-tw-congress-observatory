@@ -1,8 +1,12 @@
 import colors from './colors.css'
 
 const app = {
-	appMinWidth: 800,
+	appHeaderHeight: 60,
 	// unit: px
+	appHeaderZIndex: 100,
+	// integer
+	appBodyZIndex: 10,
+	// integer
 	modalMinWidth: 1400,
 	// unit: px
 	appSideMenuWidth: 100,
@@ -32,7 +36,11 @@ const font = {
 	// unit: px
 	h4FontSize: 24,
 	// unit: px
-	h5FontSize: 18
+	h5FontSize: 18,
+	// unit: px
+	baseFontSize: 12,
+	// unit: px
+	largeFontSize: 14
 	// unit: px
 }
 

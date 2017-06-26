@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { StyleSheet, css } from 'aphrodite'
+import appStyles from '../../styles/app.css'
 
 // ---------------- React Component ----------------
 
@@ -22,6 +23,9 @@ export default AppBody
 
 const style = StyleSheet.create({
 	body: {
-		backgroundColor: 'red'
+		position: 'relative',
+		top: `${appStyles.appHeaderHeight}px`,
+		backgroundColor: 'red',
+		zIndex: `${appStyles.appBodyZIndex}`
 	}
 })

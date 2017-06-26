@@ -5,6 +5,7 @@ import AppBody from './AppBody'
 import logo from '../../assets/images/favicon.png'
 import { StyleSheet, css } from 'aphrodite'
 import appStyles from '../../styles/app.css'
+import colors from '../../styles/colors.css'
 
 // ---------------- React Component ----------------
 
@@ -26,8 +27,13 @@ class Layout extends React.Component {
 					<div className={css(style.header)}>
 						<div className={css(style.title)}>
 							<img className={css(style.logo)} src={logo} />
-							US-Taiwan Congress Observatory
+							<div>US-Taiwan Congress Observatory</div>
 						</div>
+						<ul className={css(style.menu)}>
+							<li className={css(style.menuItem)}>Bills</li>
+							<li className={css(style.menuItem)}>Congress members</li>
+							<li className={css(style.menuItem)}>About us</li>
+						</ul>
 					</div>
 					<AppBody body={this.props.children}/>
 				</div>
@@ -48,24 +54,32 @@ export default connect(mapStateToProps, mapDispatchToProps)(Layout)
 
 // ---------------- CSS Style ----------------
 
+const containerWidth = {}
+containerWidth['width'] = `1440px`
+containerWidth[`@media (max-width: ${appStyles.largeScreenSize}px)`] = { width: `80%` }
+containerWidth[`@media (max-width: ${appStyles.medianScreenSize}px)`] = { width: `90%` }
+containerWidth[`@media (max-width: ${appStyles.smallScreenSize}px)`] = { width: `calc(100%)` }
+
 const style = StyleSheet.create({
 	root: {
 		position: 'absolute',
-		minWidth: `${appStyles.appMinWidth}px`,
 		height: '100%',
 		width: '100%',
 		margin: '0px',
 		padding: '0px',
-		overflow: 'scroll',
-		display: 'flex',
-		justifyContent: 'center'
+		overflow: 'scroll'
 	},
 	container: {
-		width: '1280px'
+		...containerWidth,
+		margin: '0 auto'
 	},
 	header: {
+		width: 'inherit',
 		display: 'flex',
-		padding: '30px 0'
+		position: 'fixed',
+		height: `${appStyles.appHeaderHeight}px`,
+		zIndex: `${appStyles.appHeaderZIndex}`,
+		backgroundColor: colors.white
 	},
 	logo: {
 		width: '25px',
@@ -78,5 +92,18 @@ const style = StyleSheet.create({
 		lineHeight: '1em',
 		display: 'flex',
 		alignItems: 'center'
+	},
+	menu: {
+		listStyleType: 'none',
+		marginLeft: 'auto',
+		display: 'flex',
+		alignItems: 'center'
+	},
+	menuItem: {
+		marginRight: '24px',
+		// fontWeight: '200',
+		fontSize: `${appStyles.largeFontSize}px`,
+		letterSpacing: '0.1em',
+		cursor: 'pointer'
 	}
 })
