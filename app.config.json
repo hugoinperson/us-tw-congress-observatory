@@ -1,0 +1,10 @@
+{
+  "webServer": {
+    "port": "5566",
+    "url": "http://localhost:5566"
+  },
+  "graphqlServer": {
+    "port": "2266",
+    "url": "http://localhost:2266"
+  }
+}

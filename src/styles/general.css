@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
+@import url('https://fonts.googleapis.com/css?family=Rubik:300,400,500,700');
+
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html, body {
+  font-size: 14px;
+  height: 100%;
+}
+
+html {
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  /*font-family: 'Roboto', sans-serif;*/
+	font-family: 'Rubik', sans-serif;
+	overflow: hidden;
+  background: transparent;
+  min-width: 320px;
+  line-height: 1.4285em;
+  color: #000000;
+}
+
+p {
+  margin: 0em 0em 1em;
+  line-height: 1.4285em;
+}
+
+p:last-child {
+    margin-bottom: 0em;
+}
+
+#app {
+	height: 100%;
+}
+
+#app > [data-reactroot] {
+  height: 100%;
+}
