@@ -40,7 +40,9 @@ const font = {
 	// unit: px
 	baseFontSize: 12,
 	// unit: px
-	largeFontSize: 14
+	largeFontSize: 14,
+	// unit: px
+	smallFontSize: 10
 	// unit: px
 }
 

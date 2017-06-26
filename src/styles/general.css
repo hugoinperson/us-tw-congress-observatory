@@ -21,8 +21,8 @@ html {
 }
 
 body {
-  /*font-family: 'Roboto', sans-serif;*/
-	font-family: 'Rubik', sans-serif;
+  font-family: 'Roboto', sans-serif;
+	/*font-family: 'Rubik', sans-serif;*/
 	overflow: hidden;
   background: transparent;
   min-width: 320px;
