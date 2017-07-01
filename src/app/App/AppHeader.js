@@ -30,7 +30,6 @@ const style = StyleSheet.create({
 	header: {
 		width: 'inherit',
 		display: 'flex',
-		position: 'fixed',
 		height: `${appStyles.appHeaderHeight}px`,
 		zIndex: `${appStyles.appHeaderZIndex}`,
 		backgroundColor: colors.white

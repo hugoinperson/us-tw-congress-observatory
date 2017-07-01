@@ -4,6 +4,9 @@ import { connect } from 'react-redux'
 // { Graphql }
 import { compose } from 'react-apollo'
 // { Components }
+import Table from '../Elements/Table'
+import TableHeaderColumn from '../Elements/TableHeaderColumn'
+import TableBodyColumn from '../Elements/TableBodyColumn'
 
 class HomePage extends React.Component {
 	static propTypes = {
@@ -13,73 +16,33 @@ class HomePage extends React.Component {
 	}
 
 	renderPage () {
+		let products = []
+		for (let i = 1; i <= 300; i++) {
+			products.push({id: 'hello', name: 'test', price: i})
+		}
+
 		return (
 			<div>
-				<p>Hello</p>
-				<p>Hello</p>
-				<p>Hello</p>
-				<p>Hello</p>
-				<p>Hello</p>
-				<p>Hello</p>
-				<p>Hello</p>
-				<p>Hello</p>
-				<p>Hello</p>
-				<p>Hello</p>
-				<p>Hello</p>
-				<p>Hello</p>
-				<p>Hello</p>
-				<p>Hello</p>
-				<p>Hello</p>
-				<p>Hello</p>
-				<p>Hello</p>
-				<p>Hello</p>
-				<p>Hello</p>
-				<p>Hello</p>
-				<p>Hello</p>
-				<p>Hello</p>
-				<p>Hello</p>
-				<p>Hello</p>
-				<p>Hello</p>
-				<p>Hello</p>
-				<p>Hello</p>
-				<p>Hello</p>
-				<p>Hello</p>
-				<p>Hello</p>
-				<p>Hello</p>
-				<p>Hello</p>
-				<p>Hello</p>
-				<p>Hello</p>
-				<p>Hello</p>
-				<p>Hello</p>
-				<p>Hello</p>
-				<p>Hello</p>
-				<p>Hello</p>
-				<p>Hello</p>
-				<p>Hello</p>
-				<p>Hello</p>
-				<p>Hello</p>
-				<p>Hello</p>
-				<p>Hello</p>
-				<p>Hello</p>
-				<p>Hello</p>
-				<p>Hello</p>
-				<p>Hello</p>
-				<p>Hello</p>
-				<p>Hello</p>
-				<p>Hello</p>
-				<p>Hello</p>
-				<p>Hello</p>
-				<p>Hello</p>
-				<p>Hello</p>
-				<p>Hello</p>
-				<p>Hello</p>
-				<p>Hello</p>
-				<p>Hello</p>
-				<p>Hello</p>
-				<p>Hello</p>
-				<p>Hello</p>
-				<p>Hello</p>
-				<p>Hello</p>
+				<Table data={products} pagination>
+					<TableHeaderColumn dataField="id">Product ID</TableHeaderColumn>
+					<TableHeaderColumn dataField="name">Product Name</TableHeaderColumn>
+					<TableHeaderColumn dataField="price">Product Price</TableHeaderColumn>
+					<TableBodyColumn>
+						{(data) => (
+							<div>{data}</div>
+						)}
+					</TableBodyColumn>
+					<TableBodyColumn>
+						{(data) => (
+							<div>{data}</div>
+						)}
+					</TableBodyColumn>
+					<TableBodyColumn>
+						{(data) => (
+							<div>{data}</div>
+						)}
+					</TableBodyColumn>
+				</Table>
 			</div>
 		)
 	}

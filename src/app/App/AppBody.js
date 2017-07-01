@@ -24,8 +24,6 @@ export default AppBody
 const style = StyleSheet.create({
 	body: {
 		position: 'relative',
-		top: `${appStyles.appHeaderHeight}px`,
-		backgroundColor: 'red',
 		zIndex: `${appStyles.appBodyZIndex}`
 	}
 })

@@ -5,8 +5,8 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 module.exports = {
 	appEntry: [
 		resolve(__dirname, '../src/app/index.js')
-    // the actuall entry file path has to be at the end of the array
-    // the order is critical
+		// the actuall entry file path has to be at the end of the array
+		// the order is critical
 	],
 	devtool: 'nosources-source-map',
 	outputFilename: '[name].[chunkhash].js',

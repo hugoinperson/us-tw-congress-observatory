@@ -3,10 +3,8 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import AppBody from './AppBody'
 import AppHeader from './AppHeader'
-import logo from '../../assets/images/favicon.png'
 import { StyleSheet, css } from 'aphrodite'
 import appStyles from '../../styles/app.css'
-import colors from '../../styles/colors.css'
 
 // ---------------- React Component ----------------
 
@@ -61,6 +59,7 @@ const style = StyleSheet.create({
 	},
 	container: {
 		...containerWidth,
-		margin: '0 auto'
+		margin: '0 auto',
+		padding: '20px'
 	}
 })
