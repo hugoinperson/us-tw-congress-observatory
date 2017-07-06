@@ -1,0 +1,10 @@
+query AllBillsQuery {
+  bills {
+    congress,
+    currentChamber,
+    billCode,
+    titleWithoutNumber,
+    introducedDate,
+    link
+  }
+}

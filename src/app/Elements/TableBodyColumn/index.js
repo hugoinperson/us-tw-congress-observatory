@@ -10,7 +10,7 @@ class TableBodyColumn extends React.Component {
 	static propTypes = {
 		children: PropTypes.func.isRequired,
 		width: PropTypes.string,
-		colData: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.object])
+		rowData: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.object])
 	}
 
 	constructor (props) {
@@ -28,11 +28,11 @@ class TableBodyColumn extends React.Component {
 	}
 
 	render () {
-		const {children, width, colData} = this.props
+		const {children, width, rowData} = this.props
 		return (
 			<td ref='body-col'
 				className={css(style({}).tableBodyColumn, style({width})[this.getProperWidthRule()])} >
-				{children(colData)}
+				{children(rowData)}
 			</td>
 		)
 	}

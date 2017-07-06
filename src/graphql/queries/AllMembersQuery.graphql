@@ -1,0 +1,13 @@
+query AllVotesQuery {
+  members {
+    id
+    link
+    party
+    roleType
+    firstname
+    lastname
+    state
+    district
+    startDate
+  }
+}

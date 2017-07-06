@@ -1,5 +1,7 @@
 import React from 'react'
 import logo from '../../assets/images/favicon.png'
+import { Link } from 'react-router'
+// { Styles }
 import { StyleSheet, css } from 'aphrodite'
 import appStyles from '../../styles/app.css'
 import colors from '../../styles/colors.css'
@@ -9,15 +11,18 @@ import colors from '../../styles/colors.css'
 const AppHeader = (props) => {
 	return (
 		<div className={css(style.header)}>
-			<div className={css(style.title)}>
-				<img className={css(style.logo)} src={logo} />
-				<div>US-Taiwan Congress Observatory</div>
+			<Link to="/home" className={css(style.homeItem)}>
+				<div className={css(style.title)}>
+					<img className={css(style.logo)} src={logo} />
+					<div>US-Taiwan Congress Observatory</div>
+				</div>
+			</Link>
+			<div className={css(style.menu)}>
+				<Link to="/bills" className={css(style.menuItem)}><li>BILLS</li></Link>
+				<Link to="/votes" className={css(style.menuItem)}><li>VOTES</li></Link>
+				<Link to="/members" className={css(style.menuItem)}><li>CONGRESS MEMBERS</li></Link>
+				<Link to="/about" className={css(style.menuItem)}><li>ABOUT</li></Link>
 			</div>
-			<ul className={css(style.menu)}>
-				<li className={css(style.menuItem)}>BILLS</li>
-				<li className={css(style.menuItem)}>CONGRESS MEMBERS</li>
-				<li className={css(style.menuItem)}>ABOUT</li>
-			</ul>
 		</div>
 	)
 }
@@ -28,11 +33,17 @@ export default AppHeader
 
 const style = StyleSheet.create({
 	header: {
-		width: 'inherit',
+		width: '100%',
 		display: 'flex',
 		height: `${appStyles.appHeaderHeight}px`,
 		zIndex: `${appStyles.appHeaderZIndex}`,
 		backgroundColor: colors.white
+	},
+	homeItem: {
+		display: 'flex',
+		alignItems: 'center',
+		color: colors.dark,
+		textDecoration: 'none'
 	},
 	logo: {
 		width: '25px',
@@ -56,6 +67,8 @@ const style = StyleSheet.create({
 		marginRight: '24px',
 		fontSize: `${appStyles.baseFontSize}px`,
 		letterSpacing: '0.1em',
-		cursor: 'pointer'
+		cursor: 'pointer',
+		color: colors.dark,
+		textDecoration: 'none'
 	}
 })

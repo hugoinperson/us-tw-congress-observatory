@@ -1,0 +1,13 @@
+query AllVotesQuery {
+  votes {
+    id
+  	link
+    congress
+    chamber
+    session
+    result
+    createdDate
+    question
+    plusRate
+  }
+}

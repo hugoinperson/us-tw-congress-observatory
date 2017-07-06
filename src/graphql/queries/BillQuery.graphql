@@ -1,0 +1,9 @@
+query BillQuery {
+  bill {
+    congress,
+    currentChamber,
+    billCode,
+    titleWithoutNumber,
+    introducedDate
+  }
+}

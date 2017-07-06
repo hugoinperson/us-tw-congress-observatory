@@ -33,21 +33,38 @@ function loadRoute (cb) {
 const HomeRoute = {
 	path: 'home',
 	getComponent (location, cb) {
-		System.import('../Home').then(loadRoute(cb)).catch(errorLoading)
+		System.import('../Main/HomePage').then(loadRoute(cb)).catch(errorLoading)
+	}
+}
+
+const BillRoute = {
+	path: ':billId',
+	getComponent (location, cb) {
+		System.import('../Bills/BillPage').then(loadRoute(cb)).catch(errorLoading)
 	}
 }
 
 const BillsRoute = {
 	path: 'bills',
 	getComponent (location, cb) {
-		System.import('../Bills').then(loadRoute(cb)).catch(errorLoading)
+		System.import('../Bills/BillListPage').then(loadRoute(cb)).catch(errorLoading)
+	},
+	childRoutes: [
+		BillRoute
+	]
+}
+
+const VotesRoute = {
+	path: 'votes',
+	getComponent (location, cb) {
+		System.import('../Votes/VoteListPage').then(loadRoute(cb)).catch(errorLoading)
 	}
 }
 
 const MembersRoute = {
 	path: 'members',
 	getComponent (location, cb) {
-		System.import('../Members').then(loadRoute(cb)).catch(errorLoading)
+		System.import('../Members/MemberListPage').then(loadRoute(cb)).catch(errorLoading)
 	}
 }
 
@@ -71,6 +88,8 @@ export default {
 		BillsRoute,
 		// congress members
 		MembersRoute,
+		// taiwan-related votes
+		VotesRoute,
 		// 404 not found
 		NotFoundRoute
 	]

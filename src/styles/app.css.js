@@ -27,6 +27,35 @@ const app = {
 	// pre-defined size for small device
 }
 
+const page = {
+	pagePadding: 6,
+	// unit: em
+	pageHeaderHeight: 120,
+	// unit: px, the page header section has the same height as the side menu button
+	pageHeaderTitleSize: 32,
+	// unit: px
+	pageHeaderTitleWeight: 500,
+	//
+	pageHeaderTitleColor: colors.grayDarkest,
+	//
+	pageHeaderSubTitleSize: 20,
+	// unit: px
+	pageHeaderSubTitleWeight: 300,
+	//
+	pageHeaderSubTitleColor: colors.grayLight,
+	//
+	pageBodyMinHeight: 300,
+	// unit: px
+	pageNavBtnSize: 16,
+	// unit: px
+	pageNavItemInterval: 20,
+	// unit: px, the distance between objects in the page navigation section
+	pageNavTextColor: colors.grayLight,
+	//
+	pageActionBtnSize: 14
+	// unit: px
+}
+
 const font = {
 	h1FontSize: 42,
 	// unit: px
@@ -50,5 +79,6 @@ const font = {
 
 export default {
 	...app,
+	...page,
 	...font
 }

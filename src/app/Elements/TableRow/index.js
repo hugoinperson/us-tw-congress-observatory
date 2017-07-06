@@ -22,7 +22,7 @@ class TableRow extends React.Component {
 		return React.Children.map(children, (child, index) => {
 			return React.cloneElement(child, {
 				width: columns[index].width,
-				colData: rowData[columns[index].name]
+				rowData: rowData
 			})
 		})
 	}
