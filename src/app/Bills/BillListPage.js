@@ -23,22 +23,8 @@ class BillListPage extends React.Component {
 		goErrorPage: PropTypes.func
 	}
 
-	callDisqus () {
-		// let disqus_config = function () {
-		// 	this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
-		// 	this.page.identifier = '000' // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-		// }
-
-		let d = document
-		let s = d.createElement('script')
-		s.src = 'https://us-taiwan-congress-observatory.disqus.com/embed.js'
-		s.setAttribute('data-timestamp', +new Date());
-		(d.head || d.body).appendChild(s)
-	}
-
 	renderPage () {
 		let bills = this.props.bills
-		this.callDisqus()
 
 		return (
 			<Page
@@ -57,7 +43,6 @@ class BillListPage extends React.Component {
 						<TableBodyColumn>{(data) => (<a href={data.link} target="_blank" className={css(style.billLink)}>{data.titleWithoutNumber}</a>)}</TableBodyColumn>
 						<TableBodyColumn>{(data) => (<div className={css(style.cellCenter)}>{(new Date(data.introducedDate)).toLocaleDateString()}</div>)}</TableBodyColumn>
 					</Table>
-					<div id="disqus_thread" className={css(style.commentSec)}/>
 				</PageBody>
 			</Page>
 		)

@@ -8,7 +8,6 @@ import { compose } from 'react-apollo'
 // { Styles }
 import { StyleSheet, css } from 'aphrodite'
 import colors from '../../styles/colors.css'
-import app from '../../styles/app.css'
 
 class HomePage extends React.Component {
 	static propTypes = {

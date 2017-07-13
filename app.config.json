@@ -4,7 +4,18 @@
     "url": "http://localhost:5566"
   },
   "graphqlServer": {
-    "port": "2266",
-    "url": "http://localhost:2266"
+    "local": {
+      "port": "2266",
+      "url": "http://localhost:2266"
+    },
+    "development": {
+      "url": "https://oir7478vj1.execute-api.us-east-1.amazonaws.com/dev/api"
+    },
+    "staging": {
+      "url": "https://oir7478vj1.execute-api.us-east-1.amazonaws.com/dev/api"
+    },
+    "production": {
+      "url": "https://oir7478vj1.execute-api.us-east-1.amazonaws.com/dev/api"
+    }
   }
 }

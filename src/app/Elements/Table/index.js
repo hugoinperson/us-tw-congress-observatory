@@ -7,6 +7,8 @@ import TableDataStore from './TableDataStore'
 import TableHeader from '../TableHeader'
 import TableBody from '../TableBody'
 import TablePagination from '../TablePagination'
+import TableHeaderColumn from '../TableHeaderColumn'
+import TableBodyColumn from '../TableBodyColumn'
 
 // ---------------- React Component ----------------
 
@@ -103,14 +105,18 @@ class Table extends React.Component {
 	}
 
 	getChildrenByType (type) {
+		const typeMap = {
+			TableHeaderColumn: TableHeaderColumn,
+			TableBodyColumn: TableBodyColumn
+		}
+
 		return this.props.children.filter(child => {
-			return child.type.displayName === type
+			return child.type.displayName === type || child.type.name === type || child.type === typeMap[type]
 		})
 	}
 
 	render () {
 		let columns = this.getColumns()
-
 		return (
 			<div className={css(style.tableWrapper)}>
 				<table ref='table'

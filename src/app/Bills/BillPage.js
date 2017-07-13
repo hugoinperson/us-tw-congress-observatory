@@ -20,22 +20,7 @@ class BillListPage extends React.Component {
 		goErrorPage: PropTypes.func
 	}
 
-	callDisqus () {
-		// let disqus_config = function () {
-		// 	this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
-		// 	this.page.identifier = '000' // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-		// }
-
-		let d = document
-		let s = d.createElement('script')
-		s.src = 'https://us-taiwan-congress-observatory.disqus.com/embed.js'
-		s.setAttribute('data-timestamp', +new Date());
-		(d.head || d.body).appendChild(s)
-	}
-
 	renderPage () {
-		this.callDisqus()
-
 		return (
 			<Page
 				pageTitle="Taiwan related bills"
@@ -60,7 +45,7 @@ class BillListPage extends React.Component {
 
 // ---------------- GraphQL Query ----------------
 
-const AllBillsQueryOptions = {
+const BillQueryOptions = {
 	props: ({ data: { loading, error, bills } }) => ({
 		loading,
 		error,
@@ -84,7 +69,7 @@ const mapDispatchToProps = () => ({
 
 export default compose(
 	connect(mapStateToProps, mapDispatchToProps),
-	graphql(AllBillsQuery, AllBillsQueryOptions)
+	graphql(BillQuery, BillQueryOptions)
 )(BillListPage)
 
 // ---------------- CSS Style ----------------

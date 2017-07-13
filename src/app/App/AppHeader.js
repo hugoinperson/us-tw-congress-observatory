@@ -21,7 +21,6 @@ const AppHeader = (props) => {
 				<Link to="/bills" className={css(style.menuItem)}><li>BILLS</li></Link>
 				<Link to="/votes" className={css(style.menuItem)}><li>VOTES</li></Link>
 				<Link to="/members" className={css(style.menuItem)}><li>CONGRESS MEMBERS</li></Link>
-				<Link to="/about" className={css(style.menuItem)}><li>ABOUT</li></Link>
 			</div>
 		</div>
 	)

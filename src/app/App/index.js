@@ -8,7 +8,7 @@ import routes from './AppRoutes'
 import appConfig from '../../../app.config'
 
 const networkInterface = createNetworkInterface({
-	uri: appConfig.graphqlServer.url
+	uri: appConfig.graphqlServer[process.env.NODE_ENV].url
 })
 
 const client = new ApolloClient({
@@ -37,7 +37,6 @@ const history = syncHistoryWithStore(browserHistory, store)
 // https://github.com/gaearon/react-hot-loader/issues/249#issuecomment-214819424
 class App extends React.Component {
 	render () {
-		console.log(routes)
 		return (
 			<ApolloProvider store={store} client={client}>
 				<Router history={history} routes={routes} key={Math.random()} />
